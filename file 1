@@ -1,0 +1,71 @@
+echo "# Class-Project-2" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/stockquinn3/Class-Project-2.git
+git push -u origin main
+
+print("Hello, This is the Movie Analyser Tool")
+
+repeat =str(input("Would you like to analyse a movie?"))
+
+movie_names = []
+num_movies = []
+actorrating = []
+actressrating = []
+drating = []
+tot_rating = []
+avg_rating = []
+all_rating = []
+rating_per = []
+while repeat.lower() == "yes":
+      
+    qmovie = str(input("Enter name of movie"))
+    num_movies.append(1)
+    movie_names.append(qmovie)
+
+    dmovie = int(input("What do you rate the director of this movie? (0 ~ 5)"))
+    drating.append(dmovie)
+    tot_rating.append(dmovie)
+
+    bmovie = int(input("What do you rate the actor of this movie? (0 ~ 5)"))
+    actorrating.append(bmovie)
+    tot_rating.append(bmovie)
+
+    gmovie = int(input("What do you rate the actress of this movie? (0 ~ 5)"))
+    actressrating.append(gmovie)
+    tot_rating.append(gmovie)
+
+    x = sum(tot_rating[(-3 + (len(num_movies)*3)):(len(num_movies)*3)])
+    avg = (x/3)
+    print("Average rating for", qmovie, "is", avg)
+    rating_per.append(avg)
+    
+    
+  
+    repeat = str(input("Do you want to rate another movie?"))
+
+if repeat.lower() == "no":
+  #Average movie
+  print("")
+  print("Analyse Report")
+  print("number of movies analysed:", len(num_movies))
+  print("rating Per", rating_per)
+  
+  print(movie_names)
+
+  for x in range(len(num_movies)):
+    print("Average Rating for movie", x+1, ":", movie_names[x], rating_per[x])
+  #Best Movie
+  
+ 
+  #Average By position
+
+  print("")
+  print("Average Director Rating", sum(drating)/len(num_movies))
+  print("Average Actor Rating", sum(actorrating)/len(num_movies))
+  print("Average Actress Rating", sum(actressrating)/len(num_movies))
+
+
+  print("A")
