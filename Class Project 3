@@ -1,0 +1,10 @@
+
+df[(df['purch_amt'] < 600  )].to_csv('Q6.csv')
+
+
+df = pd.read_csv('HW5.csv') 
+
+df.dropna().to_csv("dropped.csv")
+
+df_drop = pd.read_csv('dropped.csv')
+print(df_drop)
